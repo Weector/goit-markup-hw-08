@@ -1,0 +1,33 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-left: 0;
+}
+
+.filter__btn {
+  padding: 6px 22px;
+  cursor: pointer;
+  color: $title-text-color;
+  background-color: $grey-bg-color;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.63;
+  border: transparent;
+  border-radius: 4px;
+  outline: transparent;
+  transition: background-color $timing-function, color $timing-function, box-shadow $timing-function;
+
+  &:focus,
+  &:hover,
+  &--active {
+    background-color: $accent-color;
+    color: $white-color;
+    box-shadow: $filter-box-shadow;
+  }
+}
+
+.filter__item:not(:last-child) {
+  margin-right: 8px;
+}

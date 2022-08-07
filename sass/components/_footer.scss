@@ -1,0 +1,134 @@
+.footer__mark {
+  display: flex;
+}
+
+.footer {
+  background-color: $footer-color;
+  padding: 60px 0px;
+}
+
+.footer__logo {
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 0px;
+}
+
+.address {
+  padding: 0;
+}
+
+.address__item:not(:first-child) {
+  margin-top: 9px;
+}
+
+.address__postal {
+  color: $white-color;
+  font-style: normal;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.address__contact {
+  margin-top: 9px;
+  color: $footer-contact-color;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  transition: color $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.join {
+  padding-top: 12px;
+  margin-left: 70px;
+}
+
+.join__title {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $white-color;
+}
+
+.join__list {
+  display: flex;
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.join__icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 50%;
+  outline: transparent;
+  fill: $white-color;
+  transition: background-color $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+.join__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.subscribe {
+  position: relative;
+  margin-left: 93px;
+  padding-top: 12px;
+}
+
+.subscribe__label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $white-color;
+}
+
+.subscribe__input {
+  width: 358px;
+  height: 50px;
+  margin-top: 20px;
+  padding: 0px 0px 0px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: $footer-color;
+  color: $white-color;
+  transition: border $timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+    outline: transparent;
+  }
+}
+
+.subscribe__button {
+  position: absolute;
+  bottom: 0px;
+  right: -12px;
+  transform: translateX(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe__icon {
+  display: inline-block;
+  margin-left: 10px;
+}

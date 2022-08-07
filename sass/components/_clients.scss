@@ -1,0 +1,31 @@
+.clients {
+  display: inline-flex;
+  padding-left: 0px;
+}
+
+.clients__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients__logo {
+  display: inline-block;
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+  color: $logo-color;
+  border: 1px solid $logo-color;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: color $timing-function, border-color $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.clients__icon {
+  fill: currentColor;
+}

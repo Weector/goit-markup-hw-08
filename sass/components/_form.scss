@@ -1,0 +1,124 @@
+.form {
+  width: 448px;
+  margin-left: 41px;
+}
+
+.form__title {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: $title-text-color;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.field__input {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 15px 11px 42px;
+  transition: border $timing-function;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+    outline: transparent;
+    cursor: pointer;
+  }
+}
+
+.field__label {
+  position: absolute;
+  top: -4px;
+  left: 0px;
+  transform: translateY(-100%);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.field__icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: fill $timing-function;
+
+  .field__input:focus ~ & {
+    fill: $accent-color;
+  }
+
+  .field:hover & {
+    fill: $accent-color;
+  }
+}
+
+.textarea {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.textarea__comment {
+  resize: none;
+  height: 120px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border $timing-function;
+
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid $accent-color;
+    outline: transparent;
+    cursor: pointer;
+  }
+}
+
+.checkbox {
+  position: relative;
+  cursor: pointer;
+  line-height: 1.71;
+}
+
+.checkbox__input {
+  padding: 0px;
+  margin: 0px;
+  appearance: none;
+}
+
+.checkbox__terms {
+  color: $accent-color;
+}
+
+.checkbox__icon {
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  transform: translate(-100%, -50%);
+  transition: fill $timing-function, background-color $timing-function;
+
+  &--agree {
+    fill: transparent;
+  }
+
+  .checkbox__input:checked ~ &--square {
+    fill: $accent-color;
+  }
+
+  .checkbox__input:checked ~ &--agree {
+    fill: $white-color;
+    background-color: $accent-color;
+  }
+}
+
+.form__btn {
+  margin-top: 30px;
+}

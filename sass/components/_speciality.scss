@@ -1,0 +1,26 @@
+.speciality {
+  display: flex;
+  padding-left: 0;
+}
+
+.speciality__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.speciality__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 27px 0px;
+  width: 100%;
+  color: $white-color;
+  background-color: $speciality-bg-color;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+}
