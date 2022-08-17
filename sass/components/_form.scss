@@ -1,13 +1,13 @@
-.form {
-  width: 448px;
-  margin-left: 41px;
-}
-
 .form__title {
   display: block;
   margin-bottom: 30px;
   font-size: 20px;
+  line-height: calc(30px / 20px);
   color: $title-text-color;
+
+  @media screen and (min-width: 1200px) {
+    line-height: calc(23px / 20px);
+  }
 }
 
 .field {
@@ -22,7 +22,6 @@
   padding: 11px 15px 11px 42px;
   transition: border $timing-function;
 
-  &:hover,
   &:focus {
     border: 1px solid $accent-color;
     outline: transparent;
@@ -50,10 +49,6 @@
   .field__input:focus ~ & {
     fill: $accent-color;
   }
-
-  .field:hover & {
-    fill: $accent-color;
-  }
 }
 
 .textarea {
@@ -74,7 +69,6 @@
     color: rgba(117, 117, 117, 0.5);
   }
 
-  &:hover,
   &:focus {
     border: 1px solid $accent-color;
     outline: transparent;
@@ -83,15 +77,44 @@
 }
 
 .checkbox {
-  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 12px;
+  line-height: calc(14px / 12px);
   cursor: pointer;
-  line-height: 1.71;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24px / 14px);
+  }
 }
 
 .checkbox__input {
   padding: 0px;
   margin: 0px;
   appearance: none;
+
+  &:focus ~ .checkbox__icon {
+    outline: 2px solid $accent-color;
+    border-radius: 2px;
+  }
+
+  &:checked ~ .checkbox__icon {
+    outline: none;
+  }
+
+  &:checked ~ .checkbox__icon {
+    background-color: $accent-color;
+  }
+
+  &:checked ~ .checkbox__icon .checkbox__icon--square {
+    opacity: 0;
+  }
+
+  &:checked ~ .checkbox__icon .checkbox__icon--check {
+    opacity: 1;
+  }
 }
 
 .checkbox__terms {
@@ -99,26 +122,17 @@
 }
 
 .checkbox__icon {
-  position: absolute;
-  top: 50%;
-  left: -7px;
-  transform: translate(-100%, -50%);
-  transition: fill $timing-function, background-color $timing-function;
-
-  &--agree {
-    fill: transparent;
-  }
-
-  .checkbox__input:checked ~ &--square {
-    fill: $accent-color;
-  }
-
-  .checkbox__input:checked ~ &--agree {
-    fill: $white-color;
-    background-color: $accent-color;
-  }
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: background-color $timing-function;
 }
 
-.form__btn {
-  margin-top: 30px;
+.checkbox__icon--squre {
+  transition: opacity $timing-function;
+}
+
+.checkbox__icon--check {
+  opacity: 0;
+  fill: $white-color;
+  transition: opacity $timing-function;
 }

@@ -1,0 +1,27 @@
+.menu__btn {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &:focus,
+  &:hover .menu__icon {
+    fill: $accent-color;
+  }
+}
+
+.menu__btn.is-open .menu__icon--menu {
+  display: none;
+}
+
+.menu__btn.is-open .menu__icon--cross {
+  display: block;
+}
+
+.menu__icon--cross {
+  display: none;
+}

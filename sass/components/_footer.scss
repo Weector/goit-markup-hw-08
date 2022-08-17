@@ -1,10 +1,50 @@
-.footer__mark {
-  display: flex;
-}
-
 .footer {
   background-color: $footer-color;
   padding: 60px 0px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1600px;
+    text-align: start;
+  }
+}
+
+.footer__mark {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+.address__container {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 165px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 70px;
+  }
 }
 
 .footer__logo {
@@ -14,11 +54,19 @@
 }
 
 .address {
-  padding: 0;
+  @extend %list;
 }
 
-.address__item:not(:first-child) {
-  margin-top: 9px;
+.address__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
 }
 
 .address__postal {
@@ -29,7 +77,6 @@
 }
 
 .address__contact {
-  margin-top: 9px;
   color: $footer-contact-color;
   text-decoration: none;
   font-style: normal;
@@ -43,41 +90,17 @@
   }
 }
 
-.join {
-  padding-top: 12px;
-  margin-left: 70px;
-}
-
 .join__title {
+  margin-bottom: 20px;
   font-size: 14px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $white-color;
 }
 
-.join__list {
-  display: flex;
-  margin-top: 20px;
-  padding-left: 0;
-  list-style: none;
-}
-
 .join__icon {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  padding: 12px;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 12px;
-  border-radius: 50%;
-  outline: transparent;
   fill: $white-color;
-  transition: background-color $timing-function;
-
-  &:hover,
-  &:focus {
-    background-color: $accent-color;
-  }
 }
 
 .join__item:not(:last-child) {
@@ -85,9 +108,14 @@
 }
 
 .subscribe {
-  position: relative;
-  margin-left: 93px;
-  padding-top: 12px;
+  @media screen and (max-width: 1199px) {
+    margin-top: 60px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    position: relative;
+    margin-left: 93px;
+  }
 }
 
 .subscribe__label {
@@ -100,9 +128,9 @@
 }
 
 .subscribe__input {
-  width: 358px;
   height: 50px;
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 0px 0px 0px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -116,16 +144,29 @@
     border: 1px solid $accent-color;
     outline: transparent;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 358px;
+    margin-bottom: 0px;
+  }
 }
 
 .subscribe__button {
-  position: absolute;
-  bottom: 0px;
-  right: -12px;
-  transform: translateX(100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 1200px) {
+    position: absolute;
+    bottom: 0px;
+    right: -12px;
+    transform: translateX(100%);
+  }
 }
 
 .subscribe__icon {

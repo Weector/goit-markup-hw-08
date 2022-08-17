@@ -1,12 +1,14 @@
 @import './utils/variables';
-@import './components/body';
+@import './components/base';
 @import './utils/placeholder';
 @import './components/section';
-@import './components/logo';
 @import './components/header';
+@import './components/logo';
+@import './components/menu-btn';
+@import './components/mob-menu';
 @import './components/button';
 @import './components/hero';
-@import './components/privilege';
+@import './components/benefit';
 @import './components/speciality';
 @import './components/team';
 @import './components/clients';

@@ -1,41 +1,65 @@
-.project {
+.project__list {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 0;
-  padding-right: 0;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @extend %list;
 }
 
 .project__item {
-  margin-right: 30px;
-  margin-bottom: 30px;
   transition: box-shadow $timing-function;
 
   &:hover {
     box-shadow: $portfolio-box-shadow;
   }
-  &:nth-child(3n) {
-    margin-right: 0;
+
+  @media screen and (min-width: 780px) {
+    width: 354px;
   }
-  &:nth-last-child(-n + 3) {
-    margin-bottom: 0;
+
+  @media screen and (min-width: 1200px) {
+    width: 370px;
+  }
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  outline: transparent;
+
+  &:focus {
+    box-shadow: $portfolio-box-shadow;
   }
 }
 
 .project__thumb {
+  flex-grow: 1;
   border: 1px solid #eeeeee;
   border-top: none;
   padding: 20px 24px;
 }
 
 .project__title {
+  margin-bottom: 4px;
   color: $title-text-color;
   font-size: 18px;
   letter-spacing: 0.06em;
+  line-height: calc(36px / 18px);
+
+  @media screen and (min-width: 1200px) {
+    font-size: 18px;
+    line-height: calc(36px / 18px);
+  }
 }
 
 .project__filter {
-  margin-top: 4px;
   font-size: 16px;
+  line-height: calc(30 / 16);
+  color: $primary-text-color;
 }
 
 .project__card {
@@ -58,7 +82,8 @@
   transform: translatey(100%);
   transition: transform $timing-function;
 
-  .project__item:hover & {
+  .project__item:hover &,
+  .project-link:focus & {
     transform: translatey(0);
   }
 }

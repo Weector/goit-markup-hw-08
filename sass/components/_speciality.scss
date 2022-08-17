@@ -1,6 +1,15 @@
-.speciality {
+.specialyti {
+  display: none;
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.speciality__list {
   display: flex;
-  padding-left: 0;
+
+  @extend %list;
 }
 
 .speciality__item {

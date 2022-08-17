@@ -2,28 +2,25 @@
   background-color: $grey-bg-color;
 }
 
-.employee {
+.employee__list {
   display: flex;
-  padding-left: 0;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+
+  @extend %list;
 }
 
-.employee__list:not(:last-child) {
-  margin-right: 30px;
-}
+.employee__foto {
+  @media screen and (min-width: 768px) {
+    width: 354px;
+    height: 374px;
+  }
 
-.employee__name {
-  color: $title-text-color;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
-}
-
-.employee__position {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.19;
-  text-align: center;
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+    height: 260px;
+  }
 }
 
 .employee__thumb {
@@ -34,12 +31,37 @@
   text-align: center;
 }
 
-.employee__sn {
-  display: inline-flex;
-  margin-top: 16px;
-  padding: 12px;
+.employee__name {
+  margin-bottom: 10px;
+  color: $title-text-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.employee__position {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+
+  @extend %list;
+}
+
+.social__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   fill: $logo-color;
+  outline: transparent;
   transition: fill $timing-function, background-color $timing-function,
     border-radius $timing-function;
 

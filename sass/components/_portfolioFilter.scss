@@ -1,19 +1,33 @@
 .filter {
   display: flex;
-  justify-content: center;
-  padding-bottom: 50px;
-  padding-left: 0;
+  flex-wrap: wrap;
+  gap: 15px 8px;
+  margin-bottom: 40px;
+
+  @extend %list;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+}
+
+.filter-item {
+  flex-grow: 100%;
 }
 
 .filter__btn {
-  padding: 6px 22px;
+  padding: 6px 24px;
   cursor: pointer;
   color: $title-text-color;
   background-color: $grey-bg-color;
   font-weight: 500;
   font-size: 16px;
-  text-align: center;
   line-height: 1.63;
+  letter-spacing: 0.03em;
   border: transparent;
   border-radius: 4px;
   outline: transparent;
@@ -26,8 +40,4 @@
     color: $white-color;
     box-shadow: $filter-box-shadow;
   }
-}
-
-.filter__item:not(:last-child) {
-  margin-right: 8px;
 }
