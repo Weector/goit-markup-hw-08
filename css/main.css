@@ -78,6 +78,7 @@ img {
   color: #212121;
   font-size: 28px;
   line-height: 1.1785714286;
+  letter-spacing: 0.03em;
   text-align: center;
 }
 .section__title--hidden {
