@@ -14,7 +14,7 @@
   &:hover {
     box-shadow: $portfolio-box-shadow;
   }
-  @media screen and (min-width: 780px) {
+  @media screen and (min-width: 768px) {
     width: 354px;
   }
 
@@ -24,7 +24,7 @@
 }
 
 .project__img {
-  @media screen and (min-width: 780px) {
+  @media screen and (min-width: 768px) {
     width: 354px;
     height: 294px;
   }
